@@ -68,7 +68,7 @@ export default function NewCart({ cartItems, setCartItems }: NewCartProps) {
 
           {/* Carrinho de pedidos*/}
           <div
-            className={`bg-blue-50 w-[25%] max-md:w-[65%] max-h-[100dvh] overflow-y-auto fixed right-0 top-0 p-4 shadow-lg rounded-l-lg flex flex-col z-30 transform transition-transform duration-300 ${
+            className={`bg-blue-50 w-[25%] max-md:w-[65%] h-[100dvh] fixed right-0 top-0 p-4 shadow-lg rounded-l-lg flex flex-col z-30 transform transition-transform duration-300 ${
               isOpen ? "translate-x-0" : "translate-x-full"
             }`}
           >
