@@ -352,7 +352,7 @@ function App() {
             loading="lazy"
           />
           <div>
-            <p className="font-bold text-stone-800">Coca Cola Lata“Power-Up”</p>
+            <p className="font-bold text-stone-800">Coca Cola Lata</p>
             <p className="text-yellow-700">
               Bebida clássica dos heróis. Um gole e sua barra de energia vai de
               0 a 100 em segundos. Efeito imediato: +20 em velocidade e +15 em
@@ -379,9 +379,7 @@ function App() {
             loading="lazy"
           />
           <div>
-            <p className="font-bold text-stone-800">
-              Coca Cola Zero "Stealth Mode"
-            </p>
+            <p className="font-bold text-stone-800">Coca Cola Zero Lata</p>
             <p className="text-yellow-700">
               Zero açúcar, máximo sabor. Ideal para players que querem manter o
               stealth sem abrir mão do refresh. Efeito: +10 em agilidade, -5 em
@@ -408,9 +406,7 @@ function App() {
             loading="lazy"
           />
           <div>
-            <p className="font-bold text-stone-800">
-              Guaraná "Força da Floresta"
-            </p>
+            <p className="font-bold text-stone-800">Guaraná Lata</p>
             <p className="text-yellow-700">
               Direto da Amazônia digital. Um boost natural de energia e sabor
               brasileiro. Efeito: +25 em stamina e +10 em vibe tropical.
@@ -436,7 +432,7 @@ function App() {
             loading="lazy"
           />
           <div>
-            <p className="font-bold text-stone-800">Sprite "Freeze Blast"</p>
+            <p className="font-bold text-stone-800">Sprite Lata</p>
             <p className="text-yellow-700">
               Refrescância elemental nível máximo. Gole certeiro pra congelar a
               sede. Efeito: +30 em frescor, chance de crítico contra calor.
