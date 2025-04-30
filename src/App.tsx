@@ -4,6 +4,9 @@ import { GiRoundBottomFlask } from "react-icons/gi";
 import { FaCartPlus } from "react-icons/fa";
 import { GiDrinkMe } from "react-icons/gi";
 import NewCart from "./NewCart.tsx";
+import { useState } from "react";
+import { toast, Bounce } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 
 import burger1 from "./assets/ImgBurgers/burger1.webp";
 import burger2 from "./assets/ImgBurgers/burger2.webp";
@@ -18,7 +21,6 @@ import refri1 from "./assets/refrigerantes/cocacola.webp";
 import refri2 from "./assets/refrigerantes/cocacola0.webp";
 import refri3 from "./assets/refrigerantes/guarana.webp";
 import refri4 from "./assets/refrigerantes/sprite.webp";
-import { useState } from "react";
 
 type CartItem = {
   id: string;
@@ -59,10 +61,22 @@ function App() {
         return [...prevItems, newCartItem];
       }
     });
+    toast.success("Pedido adicionado!", {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
   }
 
   return (
     <div className="relative bg-[url('./assets/bg-restaurant.webp')] bg-cover bg-center w-full h-[400px]">
+      <ToastContainer />
       <div className="absolute inset-0 bg-black/70"></div>
       <div className="relative z-10 flex flex-col justify-center items-center w-full h-full">
         <img

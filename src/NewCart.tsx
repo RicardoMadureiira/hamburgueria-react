@@ -3,6 +3,8 @@ import { IoClose } from "react-icons/io5";
 import { useState } from "react";
 import { FaTrash } from "react-icons/fa6";
 import { FaMinus, FaPlus } from "react-icons/fa";
+import { toast, Bounce } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 
 type CartItem = {
   id: string;
@@ -28,6 +30,18 @@ export default function NewCart({ cartItems, setCartItems }: NewCartProps) {
   // remove o item do carrinho
   function removeFromCart(id: string) {
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
+
+    toast.success("Item removido!", {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
   }
 
   // calcula o total do carrinho
@@ -60,6 +74,7 @@ export default function NewCart({ cartItems, setCartItems }: NewCartProps) {
     <section>
       {isOpen && (
         <>
+          <ToastContainer />
           {/* bg escurecendo o fundo */}
           <div
             className="fixed inset-0 bg-black/50 bg-opacity-50 z-30"
