@@ -369,7 +369,7 @@ function App() {
               <p className="font-bold text-green-500">R$ 22,90</p>
               <button
                 className="bg-black px-5 rounded-sm hover:bg-yellow-700 cursor-pointer"
-                onClick={() => addToCart('Coca Cola Lata "Power-Up"', 22.9)}
+                onClick={() => addToCart("Coca Cola Lata", 22.9)}
               >
                 <FaCartPlus className="text-lg text-white" />
               </button>
@@ -396,7 +396,7 @@ function App() {
               <p className="font-bold text-green-500">R$ 22,90</p>
               <button
                 className="bg-black px-5 rounded-sm hover:bg-yellow-700 cursor-pointer"
-                onClick={() => addToCart('Coca Cola Zero "Stealth Mode"', 22.9)}
+                onClick={() => addToCart("Coca Cola Zero Lata", 22.9)}
               >
                 <FaCartPlus className="text-lg text-white" />
               </button>
@@ -422,7 +422,7 @@ function App() {
               <p className="font-bold text-green-500">R$ 22,90</p>
               <button
                 className="bg-black px-5 rounded-sm hover:bg-yellow-700 cursor-pointer"
-                onClick={() => addToCart('Guaraná "Força da Floresta"', 22.9)}
+                onClick={() => addToCart("Guaraná Lata", 22.9)}
               >
                 <FaCartPlus className="text-lg text-white" />
               </button>
@@ -448,7 +448,7 @@ function App() {
               <p className="font-bold text-green-500">R$ 22,90</p>
               <button
                 className="bg-black px-5 rounded-sm hover:bg-yellow-700 cursor-pointer"
-                onClick={() => addToCart('Sprite "Freeze Blast"', 22.9)}
+                onClick={() => addToCart("Sprite Lata", 22.9)}
               >
                 <FaCartPlus className="text-lg text-white" />
               </button>
