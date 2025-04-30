@@ -4,7 +4,6 @@ import { useState } from "react";
 import { FaTrash } from "react-icons/fa6";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { toast, Bounce } from "react-toastify";
-import { ToastContainer } from "react-toastify";
 
 type CartItem = {
   id: string;
@@ -132,12 +131,13 @@ export default function NewCart({ cartItems, setCartItems }: NewCartProps) {
                           />
                         </button>
                       </div>
+
+                      {/* Botão para remover o item do carrinho */}
                       <button
                         className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-red-50 text-gray-400 hover:text-red-500 transition-all"
                         onClick={() => removeFromCart(id)}
                       >
                         <FaTrash size={14} />
-                        <ToastContainer />
                       </button>
                     </div>
                   </li>
