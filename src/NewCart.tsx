@@ -140,9 +140,11 @@ export default function NewCart({ cartItems, setCartItems }: NewCartProps) {
               </h3>
               <button
                 onClick={() => {
-                  setShowThankYouModal(true);
-                  setCartItems([]); // limpa o carrinho e finaliza a compra
-                  setIsOpen(false); // fecha o carrinho
+                  if (cartItems.length > 0) {
+                    setShowThankYouModal(true);
+                    setCartItems([]); // Limpa o carrinho e finaliza a compra
+                    setIsOpen(false); // Fecha o carrinho
+                  }
                 }}
                 className="w-full bg-red-500 font-semibold p-3 rounded-md text-center text-white cursor-pointer hover:bg-yellow-700 transition-colors"
               >
