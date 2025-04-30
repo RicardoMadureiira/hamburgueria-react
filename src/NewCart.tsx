@@ -74,7 +74,6 @@ export default function NewCart({ cartItems, setCartItems }: NewCartProps) {
     <section>
       {isOpen && (
         <>
-          <ToastContainer />
           {/* bg escurecendo o fundo */}
           <div
             className="fixed inset-0 bg-black/50 bg-opacity-50 z-30"
@@ -138,6 +137,7 @@ export default function NewCart({ cartItems, setCartItems }: NewCartProps) {
                         onClick={() => removeFromCart(id)}
                       >
                         <FaTrash size={14} />
+                        <ToastContainer />
                       </button>
                     </div>
                   </li>
