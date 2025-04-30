@@ -30,9 +30,9 @@ export default function NewCart({ cartItems, setCartItems }: NewCartProps) {
   function removeFromCart(id: string) {
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
 
-    toast.success("Item removido!", {
+    toast.success("🗑️ Item removido!", {
       position: "top-center",
-      autoClose: 2000,
+      autoClose: 1000,
       hideProgressBar: false,
       closeOnClick: false,
       pauseOnHover: true,
