@@ -4,7 +4,7 @@ import { GiRoundBottomFlask } from "react-icons/gi";
 import { FaCartPlus } from "react-icons/fa";
 import { GiDrinkMe } from "react-icons/gi";
 import NewCart from "./NewCart.tsx";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { toast, Bounce } from "react-toastify";
 import { ToastContainer } from "react-toastify";
 
@@ -30,7 +30,14 @@ type CartItem = {
 };
 
 function App() {
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [cartItems, setCartItems] = useState<CartItem[]>(() => {
+    const savedCart = localStorage.getItem("cart");
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   function addToCart(newItem: string, price: number) {
     setCartItems((prevItems) => {

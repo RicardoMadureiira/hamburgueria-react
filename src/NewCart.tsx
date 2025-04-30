@@ -99,50 +99,56 @@ export default function NewCart({ cartItems, setCartItems }: NewCartProps) {
 
             {/* Lista de itens */}
             <div className="flex-1 overflow-y-auto">
-              <ul className="space-y-4">
-                {cartItems.map(({ id, name, price, quantity }) => (
-                  <li
-                    key={id}
-                    className="rounded-lg shadow-sm border border-gray-100"
-                  >
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-medium text-gray-800 text-sm">
-                        {name}
-                      </span>
-                      <span className="font-bold text-green-600 text-sm">
-                        R$ {price.toFixed(2)}
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-center mt-2">
-                      <div className="flex items-center">
-                        <button className="w-7 h-7 bg-gray-100 rounded-l-md flex items-center justify-center text-gray-600 hover:bg-gray-200 transition-colors">
-                          <FaMinus
-                            size={12}
-                            onClick={() => decreaseQuantity(id)}
-                          />
-                        </button>
-                        <span className="w-8 h-7 flex items-center justify-center bg-white border-t border-b border-gray-200 font-semibold text-sm">
-                          {quantity}
+              {cartItems.length === 0 ? (
+                <p className="text-center text-gray-500 mt-4">
+                  Seu carrinho está vazio.
+                </p>
+              ) : (
+                <ul className="space-y-4">
+                  {cartItems.map(({ id, name, price, quantity }) => (
+                    <li
+                      key={id}
+                      className="rounded-lg shadow-sm border border-gray-100"
+                    >
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="font-medium text-gray-800 text-sm">
+                          {name}
                         </span>
-                        <button className="w-7 h-7 bg-gray-100 rounded-r-md flex items-center justify-center text-gray-600 hover:bg-gray-200 transition-colors">
-                          <FaPlus
-                            size={12}
-                            onClick={() => increaseQuantity(id)}
-                          />
+                        <span className="font-bold text-green-600 text-sm">
+                          R$ {price.toFixed(2)}
+                        </span>
+                      </div>
+                      <div className="flex justify-between items-center mt-2">
+                        <div className="flex items-center">
+                          <button className="w-7 h-7 bg-gray-100 rounded-l-md flex items-center justify-center text-gray-600 hover:bg-gray-200 transition-colors">
+                            <FaMinus
+                              size={12}
+                              onClick={() => decreaseQuantity(id)}
+                            />
+                          </button>
+                          <span className="w-8 h-7 flex items-center justify-center bg-white border-t border-b border-gray-200 font-semibold text-sm">
+                            {quantity}
+                          </span>
+                          <button className="w-7 h-7 bg-gray-100 rounded-r-md flex items-center justify-center text-gray-600 hover:bg-gray-200 transition-colors">
+                            <FaPlus
+                              size={12}
+                              onClick={() => increaseQuantity(id)}
+                            />
+                          </button>
+                        </div>
+
+                        {/* Botão para remover o item do carrinho */}
+                        <button
+                          className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-red-50 text-gray-400 hover:text-red-500 transition-all"
+                          onClick={() => removeFromCart(id)}
+                        >
+                          <FaTrash size={16} />
                         </button>
                       </div>
-
-                      {/* Botão para remover o item do carrinho */}
-                      <button
-                        className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-red-50 text-gray-400 hover:text-red-500 transition-all"
-                        onClick={() => removeFromCart(id)}
-                      >
-                        <FaTrash size={14} />
-                      </button>
-                    </div>
-                  </li>
-                ))}
-              </ul>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
 
             {/* Botão para finalizar a compra */}
@@ -154,6 +160,7 @@ export default function NewCart({ cartItems, setCartItems }: NewCartProps) {
                 </span>
               </h3>
               <button
+                disabled={cartItems.length === 0}
                 onClick={() => {
                   if (cartItems.length > 0) {
                     setShowThankYouModal(true);
